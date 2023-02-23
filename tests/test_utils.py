@@ -25,3 +25,12 @@ def test_sort_by_date():
     """
     assert isinstance(utils.sort_by_date(), list)
     assert utils.state_executed() != utils.sort_by_date()
+
+
+def test_last_five():
+    """"
+    Тестирование функции получения последних 5 операций
+    """
+    assert isinstance(utils.last_five()[:5], list)
+    assert len(utils.last_five()[:5]) == 5
+
