@@ -26,3 +26,13 @@ def state_executed():
                 list_executed.append(i)
 
     return list_executed
+
+
+def sort_by_date():
+    """
+    Функция сортировки по дате
+    """
+    executed_operations = state_executed()
+    sorting = sorted(executed_operations, key=lambda x: datetime.datetime.strptime(x['date'], '%Y-%m-%dT%H:%M:%S.%f'),
+                     reverse=True)
+    return sorting
