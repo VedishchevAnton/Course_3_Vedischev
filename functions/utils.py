@@ -88,3 +88,9 @@ def output(transactions):
                   f"{i['from']} -> {i['to']}\n"
                   f"{i['operationAmount']['amount']} {i['operationAmount']['currency']['name']}")
             print()
+
+
+def main():
+    last_five_operations = last_five()
+    output(last_five_operations)
+
