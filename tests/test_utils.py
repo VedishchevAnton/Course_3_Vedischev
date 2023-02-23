@@ -34,3 +34,15 @@ def test_last_five():
     assert isinstance(utils.last_five()[:5], list)
     assert len(utils.last_five()[:5]) == 5
 
+def test_disguise_card():
+    """
+    Тестирование функции маскировки карты и счета
+    """
+    for i in utils.last_five()[:5]:
+        assert isinstance(i, dict)
+
+    last_five_transactions = utils.last_five()[:5]
+    assert isinstance(utils.disguise_card(last_five_transactions), list)
+
+
+
