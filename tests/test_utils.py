@@ -3,13 +3,13 @@ import requests
 import pytest
 
 
-# def test_load_json():
-#     """
-#     Тестирование функции получения данных из json файла
-#     """
-#     assert type(utils.load_json()) == list
-#     assert len((utils.load_json())) > 0
-#
+def test_load_json():
+    """
+    Тестирование функции получения данных из json файла
+    """
+    assert type(utils.load_json()) == list
+    assert len((utils.load_json())) > 0
+
 
 def test_state_executed():
     """
@@ -19,3 +19,9 @@ def test_state_executed():
     assert utils.state_executed() is not None
 
 
+def test_sort_by_date():
+    """"
+    Тестирование функции сортировки по дате
+    """
+    assert isinstance(utils.sort_by_date(), list)
+    assert utils.state_executed() != utils.sort_by_date()
