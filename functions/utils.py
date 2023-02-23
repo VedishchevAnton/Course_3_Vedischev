@@ -37,6 +37,7 @@ def sort_by_date():
                      reverse=True)
     return sorting
 
+
 def last_five():
     """
     Функция получения последних 5 операций
@@ -44,3 +45,17 @@ def last_five():
     sorting_list = sort_by_date()
     return sorting_list[:5]
 
+
+def disguise_card(transactions):
+    """
+    Функция маскировки карты и счета
+    """
+    for i in transactions:
+        if 'перевод' in i['description'].lower():
+            if 'счет' in i['from'].lower():
+                i['from'] = i['from'][:(len(i['from']) - 4) - 10] + '*' * 6 + i['from'][(len(i['from']) - 4):]
+            i['from'] = i['from'][:(len(i['from']) - 4) - 6] + '*' * 6 + i['from'][(len(
+                i['from']) - 4):]  # маскировка номера счета отправителя
+        i['to'] = i['to'][:(len(i['to']) - 4) - 16] + '*' * 2 + i['to'][(len(
+            i['to']) - 4):]  # маскировки номера счета получателя
+    return transactions
