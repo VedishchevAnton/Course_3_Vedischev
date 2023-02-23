@@ -5,11 +5,12 @@ from data_link import DATA_SOURCE
 
 def load_json():
     """
-    Получение данных из json файла
+    Функция получения данных из json файла
     """
     data = requests.get(DATA_SOURCE)
     data_words = data.json()
     return data_words
+
 
 def state_executed():
     """
