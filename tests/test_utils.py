@@ -34,6 +34,7 @@ def test_last_five():
     assert isinstance(utils.last_five()[:5], list)
     assert len(utils.last_five()[:5]) == 5
 
+
 def test_disguise_card():
     """
     Тестирование функции маскировки карты и счета
@@ -53,4 +54,9 @@ def test_date_format_change():
     assert isinstance(utils.date_format_change(last_five_transactions), list)
 
 
-
+def test_output():
+    """"
+    Тестирование функции вывода операций
+    """
+    last_five_transactions = utils.last_five()[:5]
+    assert utils.output(last_five_transactions) != utils.load_json()
