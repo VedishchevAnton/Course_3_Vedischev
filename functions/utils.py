@@ -66,9 +66,9 @@ def date_format_change(transactions):
     Функция изменения формата даты
     """
     disguise_card(transactions)
-    for k in transactions:
+    for i in transactions:
         # Приводим дату к нужному формату без посторонних символов, затем изменяем формат на нужный.
-        k['date'] = (datetime.datetime.strptime(k['date'], "%Y-%m-%dT%H:%M:%S.%f")).strftime("%d.%m.%Y")
+        i['date'] = (datetime.datetime.strptime(i['date'], "%Y-%m-%dT%H:%M:%S.%f")).strftime("%d.%m.%Y")
     return transactions
 
 
