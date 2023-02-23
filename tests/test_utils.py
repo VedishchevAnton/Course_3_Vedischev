@@ -45,4 +45,12 @@ def test_disguise_card():
     assert isinstance(utils.disguise_card(last_five_transactions), list)
 
 
+def test_date_format_change():
+    """
+    Тестирование функции изменения формата даты
+    """
+    last_five_transactions = utils.last_five()[:5]
+    assert isinstance(utils.date_format_change(last_five_transactions), list)
+
+
 
