@@ -70,3 +70,21 @@ def date_format_change(transactions):
         # Приводим дату к нужному формату без посторонних символов, затем изменяем формат на нужный.
         k['date'] = (datetime.datetime.strptime(k['date'], "%Y-%m-%dT%H:%M:%S.%f")).strftime("%d.%m.%Y")
     return transactions
+
+
+def output(transactions):
+    """
+    Функция вывода операций
+    """
+    date_format_change(transactions)
+    for i in transactions:
+        if i['description'] == 'Открытие вклада':
+            print(f"{i['date']} {i['description']}\n"
+                  f"{i['to']}\n"
+                  f"{i['operationAmount']['amount']} {i['operationAmount']['currency']['name']}")
+            print()
+        elif 'перевод' in i['description'].lower():
+            print(f"{i['date']} {i['description']}\n"
+                  f"{i['from']} -> {i['to']}\n"
+                  f"{i['operationAmount']['amount']} {i['operationAmount']['currency']['name']}")
+            print()
