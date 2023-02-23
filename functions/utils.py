@@ -93,4 +93,3 @@ def output(transactions):
 def main():
     last_five_operations = last_five()
     output(last_five_operations)
-
