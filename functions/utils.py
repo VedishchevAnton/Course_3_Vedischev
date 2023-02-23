@@ -59,3 +59,14 @@ def disguise_card(transactions):
         i['to'] = i['to'][:(len(i['to']) - 4) - 16] + '*' * 2 + i['to'][(len(
             i['to']) - 4):]  # маскировки номера счета получателя
     return transactions
+
+
+def date_format_change(transactions):
+    """
+    Функция изменения формата даты
+    """
+    disguise_card(transactions)
+    for k in transactions:
+        # Приводим дату к нужному формату без посторонних символов, затем изменяем формат на нужный.
+        k['date'] = (datetime.datetime.strptime(k['date'], "%Y-%m-%dT%H:%M:%S.%f")).strftime("%d.%m.%Y")
+    return transactions
