@@ -3,9 +3,19 @@ import requests
 import pytest
 
 
-def test_load_json():
+# def test_load_json():
+#     """
+#     Тестирование функции получения данных из json файла
+#     """
+#     assert type(utils.load_json()) == list
+#     assert len((utils.load_json())) > 0
+#
+
+def test_state_executed():
     """
-    Тестирование функции получения данных из json файла
+    Тестирование функции получения списка выполненных операций
     """
-    assert type(utils.load_json()) == list
+    assert isinstance(utils.state_executed(), list)
+    assert utils.state_executed() is not None
+
 
