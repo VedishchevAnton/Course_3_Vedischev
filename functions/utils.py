@@ -36,3 +36,11 @@ def sort_by_date():
     sorting = sorted(executed_operations, key=lambda x: datetime.datetime.strptime(x['date'], '%Y-%m-%dT%H:%M:%S.%f'),
                      reverse=True)
     return sorting
+
+def last_five():
+    """
+    Функция получения последних 5 операций
+    """
+    sorting_list = sort_by_date()
+    return sorting_list[:5]
+
