@@ -77,7 +77,7 @@ def output(transactions):
     """
     date_format_change(transactions)
     for i in transactions:
-        if i['description'] == 'Открытие вклада':
+        if 'Открытие вклада' in i['description']:
             print(f"{i['date']} {i['description']}\n"
                   f"{i['to']}\n"
                   f"{i['operationAmount']['amount']} {i['operationAmount']['currency']['name']}")
