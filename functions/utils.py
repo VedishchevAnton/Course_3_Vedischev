@@ -82,7 +82,7 @@ def output(transactions):
                   f"{i['to']}\n"
                   f"{i['operationAmount']['amount']} {i['operationAmount']['currency']['name']}")
             print()
-        elif 'перевод' in i['description'].lower():
+        elif 'Перевод со счета на счет' or 'Перевод организации' or 'Перевод с карты на карту' in i['description']:
             print(f"{i['date']} {i['description']}\n"
                   f"{i['from']} -> {i['to']}\n"
                   f"{i['operationAmount']['amount']} {i['operationAmount']['currency']['name']}")
@@ -90,5 +90,4 @@ def output(transactions):
 
 
 def main():
-    last_five_transactions = last_five()
-    output(last_five_transactions)
+    output(last_five())
