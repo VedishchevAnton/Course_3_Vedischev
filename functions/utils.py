@@ -1,13 +1,12 @@
 import requests
 import datetime
-from data_link import DATA_SOURCE
 
 
 def load_json():
     """
     Функция получения данных из json файла
     """
-    data = requests.get(DATA_SOURCE)
+    data = requests.get('https://api.npoint.io/ce6d4e606f2fd82a0d68')
     data_words = data.json()
     return data_words
 
